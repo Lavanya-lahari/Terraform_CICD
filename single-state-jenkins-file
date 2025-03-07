@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git checkout') {
+            steps {
+                 git branch: 'main', url: 'https://github.com/Lavanya-lahari/Terraform_CICD.git'
+            }
+        }
+        stage('terraform process') {
+            steps {
+                sh 'terraform init'
+                sh 'terraform plan'
+                sh 'terraform apply -auto-approve'
+            }
+        }
+    }
+}
