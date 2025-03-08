@@ -6,7 +6,7 @@ pipeline {
          steps {
          git branch: 'main', url: 'https://github.com/Lavanya-lahari/Terraform_CICD.git'
           }
-        / }
+          }
         stage('terraform init') {
             steps {
                 sh 'terraform init'
